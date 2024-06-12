@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+
+
+// Import the pages
+import ProductHome from "../src/components/products-home"
+import FavouriteProducts from "../src/components/favourite-products"
+import EditProducts from "../src/components/edit-product"
+import ProductDetails from "../src/components/product-details"
+import AddProducts from "../src/components/add-products"
+import SearchProducts from "../src/components/search-products"
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Provider store={store}>
+            <div className="App">
+                <Router>
+                    <Routes>
+                        <Route exact path="/" element={<ProductHome/>} />
+                        <Route exact path="add-product" element={<AddProducts/>} />
+                        <Route exact path="product-details" element={<ProductDetails/>} />
+                        <Route exact path="edit-product" element={<EditProducts/>} />
+                        <Route exact path="favourite-product" element={<FavouriteProducts />} />
+                        <Route exact path="search-product" element={<SearchProducts />} />
+                    </Routes>
+                </Router>
+            </div>
+        </Provider>
+    );
 }
-
 export default App;
