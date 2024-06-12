@@ -34,6 +34,8 @@ import React, {useState} from "react";
                 image: image
             });
             console.log(data);
+            window.open(`/`);
+
         } catch (error) {
             console.error('Error saving product:', error);
         }

@@ -95,15 +95,18 @@ function FavouriteProducts() {
                                                     </GridColumn>
                                                     <GridColumn width={3}>
                                                         <div style={{height: "40px", width: "100%"}}>
-                                                            <button style={{
-                                                                padding: "12px 80px",
-                                                                margin: "5px",
-                                                                backgroundColor: "#001EB9",
-                                                                color: "white",
-                                                                border: "none",
-                                                                borderRadius: "10px"
-                                                            }}>New Product
-                                                            </button>
+                                                            <Link to="/add-product">
+                                                                <button style={{
+                                                                    padding: "12px 80px",
+                                                                    margin: "5px",
+                                                                    backgroundColor: "#001EB9",
+                                                                    color: "white",
+                                                                    border: "none",
+                                                                    borderRadius: "10px",
+                                                                    animation: "ease-in"
+                                                                }}>New Product
+                                                                </button>
+                                                            </Link>
                                                         </div>
                                                     </GridColumn>
                                                     <GridColumn width={2}>
